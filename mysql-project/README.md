@@ -26,8 +26,9 @@ It also includes **phpMyAdmin** for easy database exploration and running SQL qu
 
 Start the project with:
 
-```bash
+```
 docker-compose up -d
+```
 
 ## ▶️ Access phpMyAdmin
 
