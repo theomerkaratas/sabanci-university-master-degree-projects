@@ -5,12 +5,12 @@ services:
     container_name: mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: güçlü_bir_parola
-      MYSQL_DATABASE: aw_person        # İlk DB'yi oluşturur
+      MYSQL_DATABASE: aw_person
     ports:
       - "3306:3306"
     volumes:
       - mysql_verileri:/var/lib/mysql
-      - ./data:/docker-entrypoint-initdb.d   # SQL'lerin doğru klasörü
+      - ./data:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 70s
