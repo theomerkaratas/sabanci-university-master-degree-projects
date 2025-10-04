@@ -3,9 +3,13 @@ services:
   mysql:
     image: mysql:8.0
     container_name: mysql-container
+    command: ["--default-authentication-plugin=mysql_native_password"]
     environment:
       MYSQL_ROOT_PASSWORD: güçlü_bir_parola
       MYSQL_DATABASE: aw_person
+      MYSQL_USER: dbeaver
+      MYSQL_PASSWORD: StrongPass!123
+      MYSQL_ROOT_HOST: "%"
     ports:
       - "3306:3306"
     volumes:
@@ -15,6 +19,12 @@ services:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 70s
       retries: 20
+
+#Server/Host: mysql
+#Port: 3306
+#Database: aw_person (opsiyonel)
+#Username: dbeaver
+#Password: StrongPass!123
 
   phpmyadmin:
     image: phpmyadmin
@@ -27,5 +37,57 @@ services:
     ports:
       - "8080:80"
 
+  web:
+    image: php:8.2-apache
+    container_name: apache-php
+    depends_on:
+      - mysql
+    ports:
+      - "8000:80"
+    volumes:
+      - ./www:/var/www/html
+
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaver
+    depends_on:
+      - mysql
+    ports:
+      - "8978:8978"
+    environment:
+      CB_SERVER_BIND_HOST: "0.0.0.0"
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo_root
+      MONGO_INITDB_ROOT_PASSWORD: mongo_pass
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    depends_on:
+      - mongodb
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: mongo_root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: mongo_pass
+      ME_CONFIG_MONGODB_URL: "mongodb://mongo_root:mongo_pass@mongodb:27017/"
+    restart: unless-stopped
+
 volumes:
   mysql_verileri:
+  mongodb_data:

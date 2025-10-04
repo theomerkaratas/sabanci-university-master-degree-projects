@@ -40,6 +40,22 @@ Access phpMyAdmin at:
 
 ---
 
+## ▶️ Access CloudBeaver
+
+Access CloudBeaver at:  
+👉 [http://localhost:8978](http://localhost:8978)
+
+- **Server/Host**: `mysql`  
+- **Port**: `3306`  
+- **Database**: `aw_person` (optional)  
+- **Username**: `dbeaver`  
+- **Password**: `StrongPass!123`
+
+🔧 **Driver Properties**:  
+- `allowPublicKeyRetrieval = true`  
+- `useSSL = false`
+
+
 ## 📊 Database Schema
 
 Below is the schema of the `aw_person` database.
