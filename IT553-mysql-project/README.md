@@ -15,12 +15,53 @@ It also includes **phpMyAdmin** for easy database exploration and running SQL qu
    - Image: `mysql:8.0`
    - Port: `3306`
    - Default database: `aw_person`
+   - User: `dbeaver`
+   - Password: `StrongPass!123`
+   - Root Password: `güçlü_bir_parola`
    - Automatically loads SQL scripts from `/docker-entrypoint-initdb.d/`.
 
 2. **phpMyAdmin**
    - Image: `phpmyadmin`
    - Port: `8080`
-   - Provides a web interface for database management.
+   - Provides a web interface for managing MySQL databases.
+
+3. **Web (Apache + PHP)**
+   - Image: `php:8.2-apache`
+   - Port: `8000`
+   - Mounts local `./www` directory to `/var/www/html` inside container.
+   - Useful for running PHP applications connected to MySQL.
+
+4. **CloudBeaver**
+   - Image: `dbeaver/cloudbeaver:latest`
+   - Port: `8978`
+   - Web-based database manager supporting multiple databases.
+   - Can connect to MySQL with:
+     - Host: `mysql`
+     - Port: `3306`
+     - Database: `aw_person` (optional)
+     - Username: `dbeaver`
+     - Password: `StrongPass!123`
+
+5. **MongoDB (mongodb)**
+   - Image: `mongo:latest`
+   - Port: `27017`
+   - Root User: `root`
+   - Root Password: `güçlü_bir_sifre`
+   - Stores data in Docker volume `mongodb_data`.
+
+6. **mongo-express**
+   - Image: `mongo-express:latest`
+   - Port: `8081`
+   - Web-based MongoDB admin interface.
+   - Basic Auth:
+     - User: `admin`
+     - Password: `b1r_s1r`
+   - Connects to MongoDB using:
+     - Host: `mongodb`
+     - Port: `27017`
+     - User: `root`
+     - Password: `güçlü_bir_sifre`
+     - Auth DB: `admin`
 
 ## ▶️ How to Run
 
