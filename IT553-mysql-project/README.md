@@ -55,6 +55,28 @@ Access CloudBeaver at:
 - `allowPublicKeyRetrieval = true`  
 - `useSSL = false`
 
+---
+
+## ▶️ Access mongo-express (MongoDB Web UI)
+
+Access mongo-express at:  
+👉 [http://localhost:8081](http://localhost:8081)
+
+- **Basic Auth User**: `admin`  
+- **Basic Auth Password**: `b1r_s1r`
+
+Once logged in, mongo-express will connect to your MongoDB instance with:
+
+- **MongoDB User**: `root`  
+- **MongoDB Password**: `güçlü_bir_sifre`  
+- **Host**: `mongodb`  
+- **Port**: `27017`  
+- **Auth Database**: `admin`
+
+From here, you can create databases, collections, and manage documents directly via the browser.
+
+---
+
 
 ## 📊 Database Schema
 
