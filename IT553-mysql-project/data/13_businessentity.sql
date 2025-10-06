@@ -1,4 +1,5 @@
-CREATE TABLE BusinessEntity (
+USE people;
+CREATE TABLE IF NOT EXISTS BusinessEntity (
     BusinessEntityID INT NOT NULL AUTO_INCREMENT,
     BusinessEntityCode CHAR(36) NOT NULL,
     PRIMARY KEY (BusinessEntityID)

@@ -1,4 +1,5 @@
-CREATE TABLE EmailAddress (
+USE people;
+CREATE TABLE IF NOT EXISTS EmailAddress (
     BusinessEntityID INT NOT NULL,
     EmailAddressID INT NOT NULL,
     EmailAddress VARCHAR(50),

@@ -1,4 +1,5 @@
-CREATE TABLE Person (
+USE people;
+CREATE TABLE IF NOT EXISTS Person (
     BusinessEntityID INT NOT NULL,
     PersonType CHAR(2),
     NameStyle CHAR(1) NOT NULL,

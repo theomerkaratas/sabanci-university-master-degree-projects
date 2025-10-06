@@ -1,4 +1,5 @@
-CREATE TABLE AddressType (
+USE people;
+CREATE TABLE IF NOT EXISTS AddressType (
     AddressTypeID INT NOT NULL,
     Name VARCHAR(100) NOT NULL,
     PRIMARY KEY (AddressTypeID)

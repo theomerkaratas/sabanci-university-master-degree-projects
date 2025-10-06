@@ -1,4 +1,5 @@
-CREATE TABLE PhoneNumberType (
+USE people;
+CREATE TABLE IF NOT EXISTS PhoneNumberType (
     PhoneNumberTypeID INT NOT NULL,
     Name VARCHAR(100) NOT NULL,
     PRIMARY KEY (PhoneNumberTypeID)

@@ -1,4 +1,5 @@
-CREATE TABLE Password (
+USE people;
+CREATE TABLE IF NOT EXISTS Password (
     BusinessEntityID INT NOT NULL,
     PasswordSalt VARCHAR(10),
     PasswordHash VARCHAR(128),

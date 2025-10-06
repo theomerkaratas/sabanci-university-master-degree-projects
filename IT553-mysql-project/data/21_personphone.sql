@@ -1,4 +1,5 @@
-CREATE TABLE PersonPhone (
+USE people;
+CREATE TABLE IF NOT EXISTS PersonPhone (
     BusinessEntityID INT NOT NULL,
     PhoneNumber VARCHAR(50) NOT NULL,
     PhoneNumberTypeID INT NOT NULL,

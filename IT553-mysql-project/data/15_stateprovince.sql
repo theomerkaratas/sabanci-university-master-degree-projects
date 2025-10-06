@@ -1,4 +1,5 @@
-CREATE TABLE StateProvince (
+USE people;
+CREATE TABLE IF NOT EXISTS StateProvince (
     StateProvinceID INT NOT NULL,
     StateProvinceCode CHAR(3),
     CountryRegionCode VARCHAR(3) NOT NULL,

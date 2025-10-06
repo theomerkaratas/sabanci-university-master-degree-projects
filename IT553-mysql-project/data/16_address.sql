@@ -1,4 +1,5 @@
-CREATE TABLE Address (
+USE people;
+CREATE TABLE IF NOT EXISTS Address (
     AddressID INT NOT NULL,
     AddressLine VARCHAR(60),
     City VARCHAR(30),

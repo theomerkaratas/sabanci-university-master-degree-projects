@@ -1,4 +1,5 @@
-CREATE TABLE BusinessEntityContact (
+USE people;
+CREATE TABLE IF NOT EXISTS BusinessEntityContact (
     BusinessEntityID INT NOT NULL,
     PersonID INT NOT NULL,
     ContactTypeID INT NOT NULL,

@@ -1,4 +1,5 @@
-CREATE TABLE ContactType (
+USE people;
+CREATE TABLE IF NOT EXISTS ContactType (
     ContactTypeID INT NOT NULL AUTO_INCREMENT,
     Name VARCHAR(100) NOT NULL,
     PRIMARY KEY (ContactTypeID)

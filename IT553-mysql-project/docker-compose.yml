@@ -6,7 +6,7 @@ services:
     command: ["--default-authentication-plugin=mysql_native_password"]
     environment:
       MYSQL_ROOT_PASSWORD: güçlü_bir_parola
-      MYSQL_DATABASE: aw_person
+      MYSQL_DATABASE: people
       MYSQL_USER: dbeaver
       MYSQL_PASSWORD: StrongPass!123
       MYSQL_ROOT_HOST: "%"
@@ -28,6 +28,9 @@ services:
         condition: service_healthy
     environment:
       PMA_HOST: mysql
+      #PMA_USER: root
+      #PMA_PASSWORD: güçlü_bir_parola
+      #PMA_DATABASE: person 
     ports:
       - "8080:80"
 

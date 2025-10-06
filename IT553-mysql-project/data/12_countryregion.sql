@@ -1,4 +1,5 @@
-CREATE TABLE CountryRegion (
+USE people;
+CREATE TABLE IF NOT EXISTS CountryRegion (
     CountryRegionCode VARCHAR(3) NOT NULL,
     Name VARCHAR(100) NOT NULL,
     PRIMARY KEY (CountryRegionCode)
