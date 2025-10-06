@@ -14,7 +14,7 @@ It also includes **phpMyAdmin** for easy database exploration and running SQL qu
 1. **MySQL (mysql-container)**
    - Image: `mysql:8.0`
    - Port: `3306`
-   - Default database: `aw_person`
+   - Default database: `person`
    - User: `dbeaver`
    - Password: `StrongPass!123`
    - Root Password: `güçlü_bir_parola`
@@ -88,7 +88,7 @@ Access CloudBeaver at:
 
 - **Server/Host**: `mysql`  
 - **Port**: `3306`  
-- **Database**: `aw_person` (optional)  
+- **Database**: `person` (optional)  
 - **Username**: `dbeaver`  
 - **Password**: `StrongPass!123`
 
@@ -119,11 +119,15 @@ From here, you can create databases, collections, and manage documents directly 
 ---
 
 
-## 📊 Database Schema
+# 📊 Database Schema
 
-Below is the schema of the `aw_person` database.
+This project contains two database schemas:  
+- **person**: Holds information about people, addresses, business entities, and related attributes.  
+- **reservations_system**: Manages sailors, boats, and their reservation records.  
 
 ---
+
+## 🗂 Schema: `aw_person`
 
 ### 1. AddressType
 | Column | Type | Description |
@@ -250,3 +254,35 @@ Below is the schema of the `aw_person` database.
 | PersonID | INT | Person identifier (PK, composite) |
 | ContactTypeID | INT | Contact type identifier (PK, composite) |
 | ModifiedDate | DATETIME | Last updated date |
+
+---
+
+## 🗂 Schema: `reservations_system`
+
+### 1. Sailors
+| Column | Type | Description |
+|--------|------|-------------|
+| sid | INT | Unique identifier for the sailor (PK) |
+| sname | VARCHAR(255) | Name of the sailor |
+| rating | INT | Sailor’s rating value |
+| age | INT | Age of the sailor |
+
+---
+
+### 2. Boats
+| Column | Type | Description |
+|--------|------|-------------|
+| bid | INT | Unique identifier for the boat (PK) |
+| bname | VARCHAR(255) | Name of the boat |
+| color | VARCHAR(255) | Color of the boat |
+
+---
+
+### 3. Reserves
+| Column | Type | Description |
+|--------|------|-------------|
+| sid | INT | Sailor identifier (FK → Sailors.sid) |
+| bid | INT | Boat identifier (FK → Boats.bid) |
+| date | DATE | Reservation date |
+
+---
