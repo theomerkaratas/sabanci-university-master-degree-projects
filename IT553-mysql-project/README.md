@@ -38,7 +38,7 @@ It also includes **phpMyAdmin** for easy database exploration and running SQL qu
    - Can connect to MySQL with:
      - Host: `mysql`
      - Port: `3306`
-     - Database: `aw_person` (optional)
+     - Database: `person` (optional)
      - Username: `dbeaver`
      - Password: `StrongPass!123`
 
@@ -127,7 +127,7 @@ This project contains two database schemas:
 
 ---
 
-## 🗂 Schema: `aw_person`
+## 🗂 Schema: `person`
 
 ### 1. AddressType
 | Column | Type | Description |
