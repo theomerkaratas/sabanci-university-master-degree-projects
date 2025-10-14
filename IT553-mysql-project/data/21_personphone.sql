@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS PersonPhone (
     PhoneNumber VARCHAR(50) NOT NULL,
     PhoneNumberTypeID INT NOT NULL,
     ModifiedDate DATETIME NOT NULL,
-    PRIMARY KEY (PhoneNumberTypeID)
+    PRIMARY KEY (BusinessEntityID, PhoneNumber, PhoneNumberTypeID)
 );
 
 
