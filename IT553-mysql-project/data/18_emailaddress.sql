@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS EmailAddress (
     EmailAddressID INT NOT NULL,
     EmailAddress VARCHAR(50),
     ModifiedDate DATETIME NOT NULL,
-    PRIMARY KEY (BusinessEntityID, EmailAddressID)
+    PRIMARY KEY (EmailAddressID)
 );
 
 

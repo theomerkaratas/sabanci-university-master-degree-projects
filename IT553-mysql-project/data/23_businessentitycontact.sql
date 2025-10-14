@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS BusinessEntityContact (
     PersonID INT NOT NULL,
     ContactTypeID INT NOT NULL,
     ModifiedDate DATETIME NOT NULL,
-    PRIMARY KEY (BusinessEntityID, PersonID, ContactTypeID)
+    PRIMARY KEY (BusinessEntityID, ContactTypeID)
 );
 
 INSERT INTO BusinessEntityContact
