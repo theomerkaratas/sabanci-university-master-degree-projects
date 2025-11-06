@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: güçlü_bir_parola
+      MYSQL_DATABASE: person
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/sql:/docker-entrypoint-initdb.d
+
+  apache-php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apache-php
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      - mysql
